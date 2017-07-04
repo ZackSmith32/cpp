@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 10:33:53 by zsmith            #+#    #+#             */
-/*   Updated: 2017/07/04 11:47:17 by zsmith           ###   ########.fr       */
+/*   Created: 2017/07/04 12:39:29 by zsmith            #+#    #+#             */
+/*   Updated: 2017/07/04 14:47:13 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_H
-# define PONY_H
+#ifndef ZOMBIE_H
+# define ZOMBIE_H
 
 #include <string>
 
-class Pony
+class Zombie
 {
 public:
-	std::string countryOfOrigin;
-	Pony(std::string name);
-	~Pony(void);
+	Zombie(std::string name, std::string type);
+	~Zombie(void);
+
+	void			announce(void) const;
+
 private:
-	std::string	_name;
+	std::string		_type;
+	std::string		_name;
+	
 };
 
 #endif

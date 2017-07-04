@@ -6,7 +6,7 @@
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 10:33:58 by zsmith            #+#    #+#             */
-/*   Updated: 2017/07/04 11:00:29 by zsmith           ###   ########.fr       */
+/*   Updated: 2017/07/04 11:52:54 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,18 @@
 void	ponyOnTheHeap(void) {
 	// create reference : heap
 	Pony*	shanniah = new Pony("shnniah");
+	shanniah->countryOfOrigin = "Magrathea";
+	std::cout << "Country of Origin : " << 
+		shanniah->countryOfOrigin << std::endl;
 	delete	shanniah;
 }
 
 void	ponyOnTheStack(void) {
 	// static alloction : stack
 	Pony	jeremy("jeremy");
+	jeremy.countryOfOrigin = "Florida";
+	std::cout << "Country of Origin : " << 
+		jeremy.countryOfOrigin << std::endl;
 }
 
 int		main(void) {

@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 10:33:53 by zsmith            #+#    #+#             */
-/*   Updated: 2017/07/04 11:47:17 by zsmith           ###   ########.fr       */
+/*   Created: 2017/07/04 12:39:18 by zsmith            #+#    #+#             */
+/*   Updated: 2017/07/04 15:43:46 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_H
-# define PONY_H
-
+#include "Zombie.hpp"
+#include <iostream>
 #include <string>
 
-class Pony
-{
-public:
-	std::string countryOfOrigin;
-	Pony(std::string name);
-	~Pony(void);
-private:
-	std::string	_name;
-};
+Zombie::Zombie(std::string name, std::string type) : 
+					_type(type), _name(name) {
+	return ;
+}
 
-#endif
+Zombie::~Zombie(void) {
+	std::cout << this->_name << " is dead" << std::endl;
+	return ;
+}
+
+void	Zombie::announce(void) const {
+	std::cout << this->_name << " of type " << this->_type 
+				<< " pooOOOOoOoOOooooOOooOOoop" << std::endl;
+}

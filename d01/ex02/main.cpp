@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 10:33:53 by zsmith            #+#    #+#             */
-/*   Updated: 2017/07/04 11:47:17 by zsmith           ###   ########.fr       */
+/*   Created: 2017/07/04 12:39:42 by zsmith            #+#    #+#             */
+/*   Updated: 2017/07/04 15:55:10 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_H
-# define PONY_H
+#include "Zombie.hpp"
+#include "ZombieEvent.hpp"
 
-#include <string>
+int		main(void) {
+	ZombieEvent		ze;
 
-class Pony
-{
-public:
-	std::string countryOfOrigin;
-	Pony(std::string name);
-	~Pony(void);
-private:
-	std::string	_name;
-};
+	ze.setZombieType("hyper-active Zombie");
+	ze.randomChump();
 
-#endif
+	Zombie* you = ze.newZombie("you");
+	you->announce();
+	delete you;
+
+	Zombie*	puppers = new Zombie("puppers", "doggo");
+	puppers->announce();
+	delete puppers;
+	
+	Zombie	zack("Zack", "tree");
+	zack.announce();
+
+
+
+
+	return (0);
+}
