@@ -5,14 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/07/03 11:45:51 by zsmith            #+#    #+#              #
-#    Updated: 2017/07/03 15:13:14 by zsmith           ###   ########.fr        #
+#    Created: 2017/07/03 15:22:15 by zsmith            #+#    #+#              #
+#    Updated: 2017/07/03 20:07:05 by zsmith           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	megaphone
+NAME		=	pb
 
-OBJECTS		=	megaphone.o
+OBJECTS		=	pb.o
+
+HEADERS		=	.
 
 CLANG		=	clang++
 
@@ -20,12 +22,11 @@ CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)
 
-
 $(NAME): $(OBJECTS)
 	$(CLANG) $(CXXFLAGS) $(OBJECTS) -o $@
 
 %.o:%.cpp
-	$(CLANG) $(CXXFLAGS) $^ -c -o $@ 
+	$(CLANG) $(CXXFLAGS) $^ -c -o $@ -I $(HEADERS)
 
 clean:
 	$(RM) $(OBJECTS)
