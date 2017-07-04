@@ -6,7 +6,7 @@
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/03 15:16:44 by zsmith            #+#    #+#             */
-/*   Updated: 2017/07/03 20:07:48 by zsmith           ###   ########.fr       */
+/*   Updated: 2017/07/03 20:13:10 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void		display_contacts(Person *pb, int count) {
 		if (!std::cin.good() || row_num >= count || row_num < 0) {
 			std::cout << std::endl << "Bad Input" << std::endl;
 			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cin.ignore(INT_MAX, '\n');
 		}
 		else {
 			print_person(pb[row_num]);
@@ -119,7 +119,7 @@ int		main(void) {
 		else
 			continue ;
 		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cin.ignore(INT_MAX, '\n');
 	}
 	return (0);
 }
