@@ -13,6 +13,7 @@
 #include "Account.class.hpp"
 #include <iostream>
 #include <string>
+#include <time.h>
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -121,7 +122,15 @@ void	Account::displayStatus(void) const {
 }
 
 void	Account::_displayTimestamp(void) {
-	std::cout << "[20150406_153629] ";
+
+	char			buffer[80];
+	time_t			raw_time;
+	struct tm 		*timeinfo;
+	
+	time(&raw_time);
+	timeinfo = localtime(&raw_time);
+	std::strftime(buffer, 80, "[%G%m%d_%H%M%S] ", timeinfo);
+	std::cout << buffer;
 }
 
 
