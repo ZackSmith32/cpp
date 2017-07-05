@@ -6,7 +6,7 @@
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 17:51:50 by zsmith            #+#    #+#             */
-/*   Updated: 2017/07/04 19:02:59 by zsmith           ###   ########.fr       */
+/*   Updated: 2017/07/05 15:04:43 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ ZombieHorde::ZombieHorde(int n) {
 
 ZombieHorde::~ZombieHorde(void) {
 	std::cout << "Deleting Zombies" << std::endl;
-	delete [] this->horde;
+	delete [] horde;
 }
 
 
