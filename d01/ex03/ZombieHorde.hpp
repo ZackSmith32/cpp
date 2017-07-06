@@ -6,9 +6,12 @@
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 17:51:56 by zsmith            #+#    #+#             */
-/*   Updated: 2017/07/05 15:13:00 by zsmith           ###   ########.fr       */
+/*   Updated: 2017/07/05 20:40:53 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ZOMBIEHORDE_H
+# define ZOMBIEHORDE_H
 
 #include <string>
 #include <iostream>
@@ -20,3 +23,5 @@ public:
 	~ZombieHorde(void);
 	Zombie* horde;
 };
+
+#endif

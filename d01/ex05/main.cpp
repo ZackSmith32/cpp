@@ -6,7 +6,7 @@
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/05 15:21:50 by zsmith            #+#    #+#             */
-/*   Updated: 2017/07/05 16:09:08 by zsmith           ###   ########.fr       */
+/*   Updated: 2017/07/05 20:39:22 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,5 @@ int main() {
 
 	std::cout << bob.identify() << std::endl;
 	std::cout << bob.getBrain().identify() << std::endl;
-	// std::cout << bob.getBrain() << std::endl;
-
+	return (0);
 } 
