@@ -6,7 +6,7 @@
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 09:57:47 by zsmith            #+#    #+#             */
-/*   Updated: 2017/07/06 11:01:28 by zsmith           ###   ########.fr       */
+/*   Updated: 2017/07/06 11:17:07 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,14 @@ Fixed::~Fixed(void) {
 }
 
 Fixed &	Fixed::operator=(Fixed const & rhs) {
+	std::cout << "Assignation operator called" << std::endl;
 	if (this != &rhs)
 		this->_rawBits = rhs.getRawBits();
 	return (*this);
 }
 
 int		Fixed::getRawBits(void) const {
+	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_rawBits);
 }
 
