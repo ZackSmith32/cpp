@@ -6,7 +6,7 @@
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 09:57:52 by zsmith            #+#    #+#             */
-/*   Updated: 2017/07/06 14:06:29 by zsmith           ###   ########.fr       */
+/*   Updated: 2017/07/06 15:48:07 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ public:
 
 private:
 	int		_rawBits;
+	static int const bits = 8;
 
 };
 
