@@ -6,7 +6,7 @@
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 09:57:47 by zsmith            #+#    #+#             */
-/*   Updated: 2017/07/06 18:31:29 by zsmith           ###   ########.fr       */
+/*   Updated: 2017/07/10 12:18:14 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Fixed &			Fixed::operator=(Fixed const & rhs) {
 	return (*this);
 }
 
-std::ostream&	operator<<(std::ostream &rhs, Fixed const & i) {
+std::ostream &	operator<<(std::ostream &rhs, Fixed const & i) {
 	rhs << i.toFloat();
 	return (rhs);
 }
