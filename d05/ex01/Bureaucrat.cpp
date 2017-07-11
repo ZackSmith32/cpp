@@ -1,4 +1,5 @@
 #include <Bureaucrat.hpp>
+#include <Form.hpp>
 #include <iostream>
 #include <string>
 #include <ostream>
@@ -56,7 +57,17 @@ void			Bureaucrat::checkException(int grade) {
 		throw Bureaucrat::GradeTooHighException();
 }
 
-
+void			Bureaucrat::signedForm(Form & form) {
+	if (form.getSigned()) {
+		std::cout << getName() << " signs " << form.getName() << std::endl;
+	}
+	else {
+		std::cout << getName() << " cannot sign " << form.getName() << " because ";
+		std::cout << "he/she is grade: " << getGrade();
+		std::cout << " and needs to be grade: " << form.getGradeToSign();
+		std::cout << std::endl;
+	}
+}
 
 
 
