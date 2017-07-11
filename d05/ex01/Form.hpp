@@ -9,8 +9,8 @@ class Bureaucrat;
 
 class Form {
 	public:
-		Form(std::string name);
-		Form(Form const & src);
+		Form(std::string name, int gradeToSign, int gradeToExe);
+		Form(Form & src);
 		~Form(void);
 
 		// overload
@@ -18,22 +18,41 @@ class Form {
 		std::ostream & operator<<(std::ostream & os);
 
 		// getters
-		std::string getName();
-		bool getSigned();
-		int getGradeToSign();
-		int getGradeToExe();
+		std::string getName() const;
+		bool getSigned() const;
+		int getGradeToSign() const;
+		int getGradeToExe() const;
 
 		// setters
-		void setSigned();
+		void setSigned(bool a);
 		void beSigned(Bureaucrat & person);
+
+		class GradeTooHighException : public std::exception {
+			public:
+				virtual const char * what() const throw() {
+					return ("Form::Grade to High");
+				}
+		};
+
+		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char * what() const throw() {
+					return ("Form::Grade to Low");
+				}
+		};
+
+		class BadInput : public std::exception {
+			public:
+				virtual const char * what() const throw() {
+					return ("Form::BadInput");
+				}
+		};
 
 	private:
 		const std::string _name;
 		bool _signed;
 		const int _gradeToSign;
 		const int _gradeToExe;
-
-
 };
 
 #endif

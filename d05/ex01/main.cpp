@@ -8,8 +8,8 @@ int main(void) {
 
 	Bureaucrat me("me", 60);
 	Bureaucrat you("you", 1);
-	Form doc("Doc");
-	Form contract("contract");
+	Form doc("Doc", 100, 99);
+	Form contract("contract", 2, 20);
 
 	try {
 		doc.beSigned(me);

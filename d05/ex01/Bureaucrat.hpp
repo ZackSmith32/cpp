@@ -1,4 +1,4 @@
-#ifndef BUREAUCRAT_H
+ #ifndef BUREAUCRAT_H
 # define BUREAUCRAT_H
 
 #include <exception>
