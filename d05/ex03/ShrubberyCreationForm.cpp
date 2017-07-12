@@ -89,7 +89,7 @@ std::string	ShrubberyCreationForm::getTarget() const {
 void 		ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	int grade = executor.getGrade();
 
-	if (grade > this->getGradeToExe()) {
+	if (grade > this->getGradeToExe()|| !getSigned()) {
 		throw Form::GradeTooLowException();
 	}
 	else {

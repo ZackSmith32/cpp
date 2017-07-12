@@ -36,7 +36,7 @@ void	PresidentialPardonForm::pardon() const {
 void 		PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 	int grade = executor.getGrade();
 
-	if (grade > this->getGradeToExe()) {
+	if (grade > this->getGradeToExe()|| !getSigned()) {
 		throw Form::GradeTooLowException();
 	}
 	else {

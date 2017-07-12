@@ -42,7 +42,7 @@ void	RobotomyRequestForm::robo() const {
 void 		RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	int grade = executor.getGrade();
 
-	if (grade > this->getGradeToExe()) {
+	if (grade > this->getGradeToExe()|| !getSigned()) {
 		throw Form::GradeTooLowException();
 	}
 	else {
