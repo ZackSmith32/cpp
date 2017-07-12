@@ -3,6 +3,7 @@
 #include <ShrubberyCreationForm.hpp>
 #include <RobotomyRequestForm.hpp>
 #include <PresidentialPardonForm.hpp>
+#include <Intern.hpp>
 #include <iostream>
 #include <ostream>
 #include <string>
@@ -23,11 +24,7 @@ int main(void) {
 		std::cout << "EXCEPTION: " << e.what() << std::endl;
 	}
 
-	std::cout << "**************************************************" << std::endl;
-
-	std::cout << std::endl << "test2" << std::endl;
-	std::cout << std::endl << boss << std::endl << std::endl;
-	std::cout << std::endl << palm << std::endl << std::endl;
+	std::cout << std::endl << "test2" << std::endl;	
 	try {
 		palm.execute(boss);	
 	}
@@ -35,18 +32,13 @@ int main(void) {
 		std::cout << "EXCEPTION: " << e.what() << std::endl;
 	}
 
-	std::cout << "**************************************************" << std::endl;
 	std::cout << std::endl << "test3 Bureaucrat.executeForm()" << std::endl;	
-	std::cout << std::endl << palm << std::endl << std::endl;
 	try {
-		boss.signedForm(palm);	
+		boss.executeForm(palm);	
 	}
 	catch (std::exception &e) {
 		std::cout << "EXCEPTION: " << e.what() << std::endl;
 	}
-
-	std::cout << std::endl << palm << std::endl << std::endl;
-	std::cout << "**************************************************" << std::endl;
 
 	std::cout << std::endl << "test4 Bureaucrat.executeForm() (fail)" << std::endl;	
 	try {
@@ -88,7 +80,35 @@ int main(void) {
 		std::cout << "EXCEPTION: " << e.what() << std::endl;
 	}
 
+	Intern someRandomIntern;
+	Form* rrf;	
+	std::cout << std::endl << "test9 Intern.makeForm() (fail)" << std::endl;	
+	try {
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	}
+	catch (std::exception & e) {
+		std::cout << "EXCEPTION: " << e.what() << std::endl;		
+	}
 
+	std::cout << std::endl << "test10 Intern.makeForm() (success)" << std::endl;	
+	try {
+		rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
+	}
+	catch (std::exception & e) {
+		std::cout << "EXCEPTION: " << e.what() << std::endl;		
+	}
+
+	std::cout << std::endl << "test11 form from intern, sign with boss (success)" << std::endl;	
+	try {
+		rrf->execute(boss);
+	}
+	catch (std::exception & e) {
+		std::cout << "EXCEPTION: " << e.what() << std::endl;		
+	}
+			
+
+
+			
 	return (0); 	
 }
 

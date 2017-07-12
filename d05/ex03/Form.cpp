@@ -11,11 +11,12 @@ Form::Form(std::string name, int gradeToSign, int gradeToExe) :
 	if (gradeToExe < 1 || gradeToSign < 1) {
 		throw Form::BadInput();
 	}
+
 	return ;
 }
 
-Form::Form(Form & src) :
-	_name(src.getName()), _signed(src.getSigned()), _gradeToSign(src.getGradeToSign()),
+Form::Form(Form const & src) :
+		_name(src.getName()), _signed(src.getSigned()), _gradeToSign(src.getGradeToSign()),
 		_gradeToExe(src.getGradeToExe()) {
 }
 
@@ -61,7 +62,7 @@ void Form::setSigned(bool a) {
 void Form::beSigned(Bureaucrat & person) {
 	if (person.getGrade() > getGradeToSign()) {
 		person.signedForm(*this);
-		throw GradeTooLowException();
+		throw Form::GradeTooLowException();
 	}
 	else {
 		setSigned(true);
@@ -69,9 +70,8 @@ void Form::beSigned(Bureaucrat & person) {
 	}
 }
 
-
-
-
+// need to check params on constructor for exception
+// 
 
 
 

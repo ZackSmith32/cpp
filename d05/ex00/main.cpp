@@ -19,5 +19,5 @@ int main(void) {
 	catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << dude.getGrade() << std::endl;
+	std::cout << dude << std::endl;
 }

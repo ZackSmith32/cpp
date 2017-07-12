@@ -32,11 +32,11 @@ std::ostream &	Bureaucrat::operator<<(std::ostream & os) {
 	return (os);
 }
 
-std::string		Bureaucrat::getName() {
+std::string		Bureaucrat::getName() const {
 	return (this->_name);
 }
 
-int				Bureaucrat::getGrade() {
+int				Bureaucrat::getGrade() const {
 	return (this->_grade);
 }
 
@@ -70,6 +70,14 @@ void			Bureaucrat::signedForm(Form & form) {
 	}
 }
 
+void			Bureaucrat::executeForm(Form const & form) {
+	if (getGrade() <= form.getGradeToExe()) {
+		std::cout << getName() << " executes " << form.getName() << std::endl;
+	}
+	else {
+		std::cout << getName() << " not pro enough to execute " << form.getName() << std::endl;
+	}
+}
 
 
 

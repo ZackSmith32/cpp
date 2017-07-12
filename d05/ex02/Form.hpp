@@ -10,7 +10,7 @@ class Bureaucrat;
 class Form {
 	public:
 		Form(std::string name, int gradeToSign, int gradeToExe);
-		Form(Form & src);
+		Form(Form const & src);
 		~Form(void);
 
 		// overload
@@ -24,7 +24,10 @@ class Form {
 
 		// setters
 		void setSigned(bool a);
+
+		// other
 		void beSigned(Bureaucrat & person);
+		virtual void execute(Bureaucrat const & executor) const = 0;
 
 		class GradeTooHighException : public std::exception {
 			public:
@@ -52,6 +55,8 @@ class Form {
 		bool _signed;
 		const int _gradeToSign;
 		const int _gradeToExe;
+
+
 };
 
 std::ostream & operator<<(std::ostream & rhs, Form const & lhs);
