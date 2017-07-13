@@ -6,7 +6,7 @@
 /*   By: zsmith <zsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 22:10:41 by zsmith            #+#    #+#             */
-/*   Updated: 2017/07/12 22:32:10 by zsmith           ###   ########.fr       */
+/*   Updated: 2017/07/12 22:35:32 by zsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,18 @@ int		main(void) {
 	std::cout << f << std::endl;
 	std::cout << "max = " << max<char>(e, f) << std::endl;
 	std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+
+	a = 2;
+	b = 3;
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::string g = "chaine1";
+	std::string h = "chaine2";
+	::swap(c, d);
+	std::cout << "g = " << g << ", d = " << d << std::endl;
+	std::cout << "min( g, h ) = " << ::min( g, h ) << std::endl;
+	std::cout << "max( g, h ) = " << ::max( g, h ) << std::endl;
 	return (0);
 }
